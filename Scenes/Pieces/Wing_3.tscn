@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Script/s_piece.gd" type="Script" id=1]
+[ext_resource path="res://Art/Building/pieces/wing_3a.png" type="Texture" id=2]
+
+[node name="Piece" type="Area2D"]
+collision_layer = 1024
+collision_mask = 1024
+script = ExtResource( 1 )
+stats = {
+"manovrability": 7,
+"max_fuel": 0,
+"shield": 2.0,
+"speed": 0
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 4.29153e-06, 2.97303 )
+rotation = -0.261799
+texture = ExtResource( 2 )
+
+[node name="Collision" type="CollisionPolygon2D" parent="."]
+position = Vector2( 15.7364, 8.01808 )
+scale = Vector2( 1.00694, 1 )
+polygon = PoolVector2Array( -58.0195, 62.6698, -16.2173, 23.945, 26.6995, 9.35297, 28.3716, -70.9029, 11.0934, -66.9743, -46.8723, -15.9024 )
+
+[node name="Tween" type="Tween" parent="."]

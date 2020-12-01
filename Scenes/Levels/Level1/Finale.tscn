@@ -1,0 +1,155 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Art/Fonts/TAPELOOP.TTF" type="DynamicFontData" id=1]
+[ext_resource path="res://Art/Fonts/Savage.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="Animation" id=3]
+resource_name = "Title"
+length = 10.0
+step = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Control/Title:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2.5, 4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Control/Thanks:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Control/Chapter 1:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 3.5, 4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Control/Coming soon:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 5, 5.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="DynamicFont" id=1]
+size = 54
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 28
+font_data = ExtResource( 2 )
+
+[node name="Finale" type="Node2D"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Title"
+anims/Title = SubResource( 3 )
+
+[node name="Control" type="Control" parent="."]
+margin_right = 1600.0
+margin_bottom = 900.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="Control"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -244.0
+margin_top = -90.5
+margin_right = 204.0
+margin_bottom = 50.5
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.741176, 0.705882, 0.65098, 1 )
+text = "Out of Reach"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Thanks" type="Label" parent="Control"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -245.937
+margin_top = -114.482
+margin_right = 202.063
+margin_bottom = -78.4818
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.741176, 0.705882, 0.65098, 1 )
+text = "thank you for playing"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Chapter 1" type="Label" parent="Control"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -244.937
+margin_top = 32.5182
+margin_right = 203.063
+margin_bottom = 68.5182
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.741176, 0.705882, 0.65098, 1 )
+text = "- Chapter 1 -"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Coming soon" type="Label" parent="Control"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -243.238
+margin_top = 99.1544
+margin_right = 204.762
+margin_bottom = 135.154
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.741176, 0.705882, 0.65098, 1 )
+text = "Chapter 2 and 3 coming soon"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

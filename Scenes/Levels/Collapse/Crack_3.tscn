@@ -1,0 +1,111 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Art/Levels/Hazards/Cracks/3/c_3_0006.png" type="Texture" id=1]
+[ext_resource path="res://Audio/Effects/building collapse4_2.wav" type="AudioStream" id=2]
+[ext_resource path="res://Art/Levels/Hazards/Cracks/3/c_3_0002.png" type="Texture" id=3]
+[ext_resource path="res://Art/Levels/Hazards/Cracks/3/c_3_0004.png" type="Texture" id=4]
+[ext_resource path="res://Art/Levels/Hazards/Cracks/3/c_3_0005.png" type="Texture" id=5]
+[ext_resource path="res://Script/Levels/Collapse/s_crack_4.gd" type="Script" id=6]
+[ext_resource path="res://Scenes/Levels/Collapse/FragmentSpawn.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Art/Levels/Hazards/Cracks/3/c_3_0003.png" type="Texture" id=8]
+[ext_resource path="res://Art/Levels/Hazards/Cracks/3/c_3_0001.png" type="Texture" id=9]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ), ExtResource( 3 ), ExtResource( 8 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 1 ) ],
+"loop": false,
+"name": "activate",
+"speed": 6.0
+} ]
+
+[sub_resource type="Curve2D" id=2]
+resource_local_to_scene = true
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -194.944, -6.2204, 0, 0, 0, 0, -161.981, 11.7593, 0, 0, 0, 0, -121.527, -18.2068, 0, 0, 0, 0, -19.642, 7.26437, 0, 0, 0, 0, 52.2768, -3.22379, 0, 0, 0, 0, 238.067, 23.7457 )
+}
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 711.72, 92.8296 )
+
+[sub_resource type="Curve2D" id=4]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -189.336, 46.1416, 0, 0, 0, 0, -79.879, 28.7887, 0, 0, 0, 0, 8.2204, 19.4448, 0, 0, 0, 0, 73.6276, 3.42674 )
+}
+
+[node name="Crack" type="Node2D"]
+script = ExtResource( 6 )
+final_fragments = [ "md", "md", "sm", "sm", "xs", "xs" ]
+spawn_all = true
+
+[node name="Area" type="Area2D" parent="."]
+position = Vector2( 0, -1 )
+collision_layer = 8
+collision_mask = 0
+
+[node name="Sprite" type="AnimatedSprite" parent="Area"]
+frames = SubResource( 1 )
+animation = "activate"
+frame = 5
+
+[node name="FragmentPath" type="Path2D" parent="Area"]
+position = Vector2( 0, 1 )
+curve = SubResource( 2 )
+
+[node name="Collision_0" type="CollisionPolygon2D" parent="Area"]
+visible = false
+polygon = PoolVector2Array( -359.54, -18.3162, -225.51, 79.8467, -141.505, 40.204, -169.821, 23.2142, -141.505, 14.7194, -161.327, -23.0356, -258.813, -93.02 )
+disabled = true
+
+[node name="Collision_2" type="CollisionPolygon2D" parent="Area"]
+visible = false
+polygon = PoolVector2Array( -359.54, -18.3162, -225.51, 79.8467, -134.898, 45.8672, -92.4237, 19.4387, -127.347, 9.05611, -77.3217, -15.4846, -258.813, -93.02 )
+disabled = true
+
+[node name="Collision_3" type="CollisionPolygon2D" parent="Area"]
+visible = false
+polygon = PoolVector2Array( -359.54, -18.3162, -225.51, 79.8467, -114.133, 44.9233, -92.4237, 19.4387, -7.47507, 15.6632, 62.3716, -13.5969, -34.8474, -6.04588, -258.813, -93.02 )
+disabled = true
+
+[node name="Collision_4" type="CollisionPolygon2D" parent="Area"]
+visible = false
+polygon = PoolVector2Array( -359.54, -18.3162, -225.51, 79.8467, -114.133, 44.9233, -92.4237, 19.4387, -7.47507, 15.6632, 35.0493, -2.15103, 163.965, 6.91084, 57.6094, -14.5191, -34.8474, -6.04588, -258.813, -93.02 )
+disabled = true
+
+[node name="Collision_5" type="CollisionPolygon2D" parent="Area"]
+visible = false
+polygon = PoolVector2Array( -359.54, -18.3162, -225.51, 79.8467, -114.133, 44.9233, -92.4237, 19.4387, -7.47507, 15.6632, 35.0493, -2.15103, 271.909, 36.2778, 360.009, -16.9002, 236.192, 21.9911, 57.6094, -14.5191, -34.8474, -6.04588, -258.813, -93.02 )
+disabled = true
+
+[node name="FragmentSpawn" parent="." instance=ExtResource( 7 )]
+position = Vector2( -194.344, 17.7319 )
+interval = 0.05
+infinite_fragments = [ "xs" ]
+
+[node name="Sight" type="Area2D" parent="."]
+visible = false
+collision_layer = 32
+collision_mask = 0
+
+[node name="Collision" type="CollisionShape2D" parent="Sight"]
+position = Vector2( 353.159, -7.01652 )
+shape = SubResource( 3 )
+
+[node name="ReferencePath" type="Path2D" parent="."]
+visible = false
+curve = SubResource( 4 )
+
+[node name="FinalSpawn" type="Node2D" parent="."]
+position = Vector2( 257.671, 26.6631 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 2 )
+bus = "Sound Effects"
+[connection signal="area_shape_entered" from="Area" to="." method="_on_Area_area_shape_entered"]
+[connection signal="animation_finished" from="Area/Sprite" to="." method="_on_Sprite_animation_finished"]
+[connection signal="frame_changed" from="Area/Sprite" to="." method="_on_Sprite_frame_changed"]
+[connection signal="area_shape_entered" from="Sight" to="." method="_on_Sight_area_shape_entered"]

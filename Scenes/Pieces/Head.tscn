@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Script/s_piece.gd" type="Script" id=1]
+[ext_resource path="res://Art/Building/pieces/head_a.png" type="Texture" id=2]
+
+[node name="Piece" type="Area2D"]
+collision_layer = 1024
+collision_mask = 1024
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+
+[node name="Collision" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( 0.384918, -48.4822, -24.7173, -15.6018, -40.2737, 20.8142, -22.596, 37.4312, 0.0313721, 47.3306, 24.4265, 38.8454, 42.8113, 20.1071, 27.9621, -15.9554 )
+
+[node name="Tween" type="Tween" parent="."]

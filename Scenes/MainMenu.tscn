@@ -1,0 +1,477 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://Script/s_main_menu.gd" type="Script" id=1]
+[ext_resource path="res://Art/Fonts/TAPELOOP.TTF" type="DynamicFontData" id=2]
+[ext_resource path="res://Art/Levels/backgrounds/CosmicSky/sky_base_stars.png" type="Texture" id=3]
+[ext_resource path="res://Art/Menus/cloud_2_main_menu.png" type="Texture" id=4]
+[ext_resource path="res://Art/Menus/cloud_main_menu.png" type="Texture" id=5]
+[ext_resource path="res://Art/Menus/menu_button_on.png" type="Texture" id=6]
+[ext_resource path="res://Art/Menus/menu_button_off.png" type="Texture" id=7]
+[ext_resource path="res://Art/Menus/journal_closed.png" type="Texture" id=8]
+[ext_resource path="res://Audio/Themes/MAIN_THEME.wav" type="AudioStream" id=9]
+
+[sub_resource type="Animation" id=1]
+resource_name = "MainMenuAnimation"
+length = 48.0
+loop = true
+step = 1.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("DarkClouds:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 48 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( -4510, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Lightclouds:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 48 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -4000, 0 ), Vector2( 1760, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Journal_front/journal_closed:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = false
+tracks/2/keys = {
+"times": PoolRealArray( 0, 4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 42, 46, 48 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 819.029, 490.933 ), Vector2( 819.029, 500.933 ), Vector2( 819.029, 480.933 ), Vector2( 819.029, 500.933 ), Vector2( 819.029, 480.933 ), Vector2( 819.029, 500.933 ), Vector2( 819.029, 480.933 ), Vector2( 819.029, 500.933 ), Vector2( 819.029, 480.933 ), Vector2( 819.029, 500.933 ), Vector2( 819.029, 480.933 ), Vector2( 819.029, 500.933 ), Vector2( 819.029, 480.933 ), Vector2( 819.029, 480.933 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Journal_front/journal_closed:offset")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 2, 6, 10, 14, 18, 22, 26, 30, 34, 38, 42, 46, 48 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, 10 ), Vector2( 0, -10 ), Vector2( 0, 10 ), Vector2( 0, -10 ), Vector2( 0, 10 ), Vector2( 0, -10 ), Vector2( 0, 10 ), Vector2( 0, -10 ), Vector2( 0, 10 ), Vector2( 0, -10 ), Vector2( 0, 10 ), Vector2( 0, -10 ), Vector2( 0, 0 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Journal_back/journal_closed:offset")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 2, 6, 10, 14, 18, 22, 26, 30, 34, 38, 42, 46, 48 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, 10 ), Vector2( 0, -10 ), Vector2( 0, 10 ), Vector2( 0, -10 ), Vector2( 0, 10 ), Vector2( 0, -10 ), Vector2( 0, 10 ), Vector2( 0, -10 ), Vector2( 0, 10 ), Vector2( 0, -10 ), Vector2( 0, 10 ), Vector2( 0, -10 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "FlipToBack"
+length = 0.5
+step = 0.25
+tracks/0/type = "value"
+tracks/0/path = NodePath("Journal_front:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.25, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 0, 1.2 ), Vector2( -1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Journal_front:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.25 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Journal_back:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.25, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -1, 1 ), Vector2( 0, 1.2 ), Vector2( 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Journal_back:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.25, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, true ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "FlipToFront"
+length = 0.5
+step = 0.25
+tracks/0/type = "value"
+tracks/0/path = NodePath("Journal_front:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.25, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -1, 1 ), Vector2( 0, 1.2 ), Vector2( 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Journal_front:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.25 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Journal_back:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.25, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 0, 1.2 ), Vector2( -1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Journal_back:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.25 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[sub_resource type="DynamicFont" id=4]
+size = 54
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 38
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 14
+font_data = ExtResource( 2 )
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="AnimationPlayerBack" type="AnimationPlayer" parent="."]
+anims/MainMenuAnimation = SubResource( 1 )
+
+[node name="AnimationPlayerFlip" type="AnimationPlayer" parent="."]
+anims/FlipToBack = SubResource( 2 )
+anims/FlipToFront = SubResource( 3 )
+
+[node name="sky_base_stars" type="Sprite" parent="."]
+position = Vector2( 798.783, 453.423 )
+scale = Vector2( 0.845833, 0.853704 )
+texture = ExtResource( 3 )
+
+[node name="DarkClouds" type="Node2D" parent="."]
+modulate = Color( 1, 1, 1, 0.501961 )
+position = Vector2( -3946.25, 0 )
+
+[node name="cloud_2_main_menu" type="Sprite" parent="DarkClouds"]
+position = Vector2( 1890, 450 )
+scale = Vector2( 0.864043, 0.864043 )
+texture = ExtResource( 4 )
+
+[node name="cloud_2_main_menu2" type="Sprite" parent="DarkClouds"]
+position = Vector2( 6400, 450 )
+scale = Vector2( 0.864043, 0.864043 )
+texture = ExtResource( 4 )
+
+[node name="Lightclouds" type="Node2D" parent="."]
+modulate = Color( 1, 1, 1, 0.501961 )
+position = Vector2( 1040, 0 )
+
+[node name="cloud_main_menu" type="Sprite" parent="Lightclouds"]
+position = Vector2( 2960, 460 )
+texture = ExtResource( 5 )
+
+[node name="cloud_main_menu2" type="Sprite" parent="Lightclouds"]
+position = Vector2( -2800, 460 )
+texture = ExtResource( 5 )
+
+[node name="Journal_front" type="Node2D" parent="."]
+position = Vector2( 800, 450 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="journal_closed" type="Sprite" parent="Journal_front"]
+texture = ExtResource( 8 )
+offset = Vector2( 0, 10 )
+
+[node name="Title" type="Label" parent="Journal_front"]
+margin_left = -220.029
+margin_top = -327.399
+margin_right = 227.971
+margin_bottom = -186.399
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0.741176, 0.705882, 0.65098, 1 )
+text = "Out of Reach"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Buttons" type="Control" parent="Journal_front"]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Play" type="Control" parent="Journal_front/Buttons"]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Journal_front/Buttons/Play"]
+margin_left = -88.0561
+margin_top = -106.144
+margin_right = 89.9439
+margin_bottom = -57.1444
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0.741176, 0.705882, 0.65098, 1 )
+text = "Play"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Build" type="TextureButton" parent="Journal_front/Buttons/Play"]
+margin_left = -96.0295
+margin_top = -107.409
+margin_right = 289.971
+margin_bottom = -20.4089
+rect_scale = Vector2( 0.5, 0.7 )
+texture_normal = ExtResource( 7 )
+texture_pressed = ExtResource( 6 )
+texture_hover = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Credits" type="Control" parent="Journal_front/Buttons"]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Journal_front/Buttons/Credits"]
+margin_left = -88.0013
+margin_top = -22.5949
+margin_right = 89.9987
+margin_bottom = 26.4051
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0.741176, 0.705882, 0.65098, 1 )
+text = "Credits"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="TextureButton" parent="Journal_front/Buttons/Credits"]
+margin_left = -94.2503
+margin_top = -27.403
+margin_right = 291.75
+margin_bottom = 59.597
+rect_scale = Vector2( 0.5, 0.7 )
+texture_normal = ExtResource( 7 )
+texture_pressed = ExtResource( 6 )
+texture_hover = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Quit" type="Control" parent="Journal_front/Buttons"]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Journal_front/Buttons/Quit"]
+margin_left = -87.3096
+margin_top = 63.6716
+margin_right = 90.6904
+margin_bottom = 112.672
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0.741176, 0.705882, 0.65098, 1 )
+text = "Quit"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="TextureButton" parent="Journal_front/Buttons/Quit"]
+margin_left = -95.4395
+margin_top = 60.5983
+margin_right = 290.561
+margin_bottom = 147.598
+rect_scale = Vector2( 0.5, 0.7 )
+texture_normal = ExtResource( 7 )
+texture_pressed = ExtResource( 6 )
+texture_hover = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Journal_back" type="Node2D" parent="."]
+visible = false
+position = Vector2( 800, 450 )
+scale = Vector2( -1, 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="journal_closed" type="Sprite" parent="Journal_back"]
+scale = Vector2( -1, 1 )
+texture = ExtResource( 8 )
+offset = Vector2( 0, 10 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Journal_back"]
+margin_left = -181.0
+margin_top = -342.0
+margin_right = 151.0
+margin_bottom = 175.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="credits" type="VBoxContainer" parent="Journal_back/HBoxContainer"]
+margin_right = 94.0
+margin_bottom = 517.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Desing" type="Label" parent="Journal_back/HBoxContainer/credits"]
+margin_right = 94.0
+margin_bottom = 41.0
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 0.741176, 0.705882, 0.65098, 1 )
+text = ">Design:
+Otton Drumm"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Art" type="Label" parent="Journal_back/HBoxContainer/credits"]
+margin_top = 45.0
+margin_right = 94.0
+margin_bottom = 86.0
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 0.741176, 0.705882, 0.65098, 1 )
+text = ">Art:
+OttonDrumm"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Story" type="Label" parent="Journal_back/HBoxContainer/credits"]
+margin_top = 90.0
+margin_right = 94.0
+margin_bottom = 175.0
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 0.741176, 0.705882, 0.65098, 1 )
+text = ">Story:
+OttonDrumm
+Melania Esposito
+FlorydStudios"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Back" type="Control" parent="Journal_back"]
+margin_left = -188.87
+margin_top = 256.579
+margin_right = -188.87
+margin_bottom = 256.579
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Journal_back/Back"]
+margin_right = 178.0
+margin_bottom = 49.0
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0.741176, 0.705882, 0.65098, 1 )
+text = "<-Back"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="TextureButton" parent="Journal_back/Back"]
+margin_right = 386.0
+margin_bottom = 87.0
+rect_scale = Vector2( 0.5, 0.7 )
+texture_normal = ExtResource( 7 )
+texture_pressed = ExtResource( 6 )
+texture_hover = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Audio" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 9 )
+bus = "Background Music"
+
+[node name="Tween" type="Tween" parent="."]
+[connection signal="pressed" from="Journal_front/Buttons/Play/Build" to="." method="_on_Build_pressed"]
+[connection signal="pressed" from="Journal_front/Buttons/Credits/Button" to="." method="flip_Journal"]
+[connection signal="pressed" from="Journal_front/Buttons/Quit/Button" to="." method="_on_Quit_pressed"]
+[connection signal="pressed" from="Journal_back/Back/Button" to="." method="flip_Journal"]

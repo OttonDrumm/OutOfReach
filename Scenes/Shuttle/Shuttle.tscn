@@ -1,0 +1,119 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Script/Shuttle/s_shuttle.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Shuttle/ShuttlePiece.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Shuttle/Engine.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Art/Building/progress bar/progress_bar_red.png" type="Texture" id=4]
+[ext_resource path="res://Art/Building/progress bar/progress_bar_outline.png" type="Texture" id=5]
+[ext_resource path="res://Audio/Effects/impact.wav" type="AudioStream" id=6]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 57.3902, 10 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "DamageBlink"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Path/Follow/Pieces/Rotating:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4, 0.8, 1, 1.2, 1.4, 1.6, 1.7, 1.8, 1.9, 1.95, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.501961 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.501961 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.501961 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.501961 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[node name="Shuttle" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Path" type="Path2D" parent="."]
+curve = null
+
+[node name="Follow" type="PathFollow2D" parent="Path"]
+loop = false
+
+[node name="Pieces" type="KinematicBody2D" parent="Path/Follow"]
+collision_layer = 0
+collision_mask = 0
+
+[node name="Shield" type="TextureProgress" parent="Path/Follow/Pieces"]
+visible = false
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -108.888
+margin_top = -70.1217
+margin_right = 110.112
+margin_bottom = -52.1217
+texture_under = ExtResource( 5 )
+texture_progress = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Rotating" type="Node2D" parent="Path/Follow/Pieces"]
+modulate = Color( 1, 1, 1, 0.501961 )
+
+[node name="Head" parent="Path/Follow/Pieces/Rotating" instance=ExtResource( 2 )]
+is_head = true
+
+[node name="Engine_1" parent="Path/Follow/Pieces/Rotating" instance=ExtResource( 3 )]
+
+[node name="Engine_2" parent="Path/Follow/Pieces/Rotating" instance=ExtResource( 3 )]
+chapter = 2
+
+[node name="Engine_3" parent="Path/Follow/Pieces/Rotating" instance=ExtResource( 3 )]
+chapter = 3
+
+[node name="BaseCollision" type="CollisionShape2D" parent="Path/Follow/Pieces"]
+visible = false
+position = Vector2( -5.55054, 135.605 )
+shape = SubResource( 1 )
+disabled = true
+
+[node name="Camera2D" type="Camera2D" parent="Path/Follow/Pieces"]
+visible = false
+limit_left = -800
+limit_right = 800
+limit_bottom = 200
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+drag_margin_left = 1.0
+drag_margin_top = 0.1
+drag_margin_right = 1.0
+drag_margin_bottom = 1.0
+
+[node name="Camera2D2" type="Camera2D" parent="Path/Follow/Pieces"]
+current = true
+limit_bottom = 200
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+drag_margin_left = 0.05
+drag_margin_top = 0.1
+drag_margin_right = 0.05
+drag_margin_bottom = 1.0
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="TweenLeft" type="Tween" parent="."]
+
+[node name="TweenRight" type="Tween" parent="."]
+
+[node name="TweenDamage" type="Tween" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/DamageBlink = SubResource( 2 )
+
+[node name="AudioImpact" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 6 )
+volume_db = 15.0
+bus = "Player Sounds"
+[connection signal="collision_detected" from="Path/Follow/Pieces/Rotating/Head" to="." method="_collision_detected"]
+[connection signal="collision_detected" from="Path/Follow/Pieces/Rotating/Engine_1" to="." method="_collision_detected"]
+[connection signal="collision_detected" from="Path/Follow/Pieces/Rotating/Engine_2" to="." method="_collision_detected"]
+[connection signal="collision_detected" from="Path/Follow/Pieces/Rotating/Engine_3" to="." method="_collision_detected"]

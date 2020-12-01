@@ -1,0 +1,58 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Script/Hazards/s_hazard.gd" type="Script" id=1]
+[ext_resource path="res://Art/Levels/Hazards/Clouds/cloud_10002.png" type="Texture" id=2]
+[ext_resource path="res://Art/Levels/Hazards/Clouds/cloud_10000.png" type="Texture" id=3]
+[ext_resource path="res://Art/Levels/Hazards/Clouds/cloud_10001.png" type="Texture" id=4]
+[ext_resource path="res://Art/Levels/Hazards/Clouds/cloud_10003.png" type="Texture" id=5]
+
+[sub_resource type="Curve2D" id=3]
+_data = {
+"points": PoolVector2Array( -1.5874, -50.7968, 1.5874, 50.7968, -5.63428, -7.47211, 198.425, 1.58741, -198.425, -1.58741, -212.35, 56.7197, 167.055, 1.96496, -167.055, -1.96496, -582.006, -66.2722, 1.39862, -45.9312, -1.39862, 45.9312, -787.595, 0.285522, -173.027, 1.5874, 173.027, -1.5874, -586.461, 55.7809, -201.6, 1.5874, 201.6, -1.5874, -211.556, -66.3039, 0.7937, -49.2094, -0.7937, 49.2094, -5.63428, -7.47211 )
+}
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 2 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 568.042, 697.22 )
+
+[node name="Hazard" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Path2D" type="Path2D" parent="."]
+position = Vector2( 1, 0 )
+curve = SubResource( 3 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2( -5.63428, -7.47211 )
+rotate = false
+
+[node name="H" type="Area2D" parent="Path2D/PathFollow2D"]
+collision_layer = 0
+collision_mask = 8
+
+[node name="Sprite" type="AnimatedSprite" parent="Path2D/PathFollow2D/H"]
+frames = SubResource( 1 )
+frame = 3
+playing = true
+
+[node name="Collision" type="CollisionPolygon2D" parent="Path2D/PathFollow2D/H"]
+polygon = PoolVector2Array( -205.508, 6.62172, -188.156, 29.314, -150.12, 21.4548, -133.741, 35.3139, -107.282, 25.2345, -49.3258, 29.0143, -32.9468, 15.1552, 14.9302, 52.9528, 89.2655, 39.0937, 88.0056, 11.3754, 139.662, 18.9349, 138.402, -3.74365, 72.8865, -10.0433, 57.7675, -32.7218, 19.9698, -18.8627, -10.2682, -52.8806, -95.9429, -22.6425, -124.921, -32.7218 )
+
+[node name="Sight" type="Area2D" parent="."]
+visible = false
+collision_layer = 32
+collision_mask = 0
+
+[node name="Collision" type="CollisionShape2D" parent="Sight"]
+position = Vector2( -505.135, 6.89517 )
+shape = SubResource( 2 )
+[connection signal="area_shape_entered" from="Path2D/PathFollow2D/H" to="." method="_on_H_area_shape_entered"]
+[connection signal="area_exited" from="Sight" to="." method="_on_Sight_area_exited"]
+[connection signal="area_shape_entered" from="Sight" to="." method="_on_Sight_area_shape_entered"]

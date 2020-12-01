@@ -1,0 +1,8 @@
+[gd_resource type="DynamicFont" load_steps=2 format=2]
+
+[ext_resource path="res://Art/Fonts/TAPELOOP.TTF" type="DynamicFontData" id=1]
+
+[resource]
+size = 20
+outline_color = Color( 0.32549, 0.0666667, 0.0196078, 1 )
+font_data = ExtResource( 1 )

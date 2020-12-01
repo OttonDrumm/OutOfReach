@@ -1,0 +1,917 @@
+[gd_scene load_steps=34 format=2]
+
+[ext_resource path="res://Art/Building/progress bar/progress_bar_outline.png" type="Texture" id=1]
+[ext_resource path="res://Art/Building/progress bar/progress_bar_red.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/Shuttle/Shuttle.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Script/Levels/Level1/s_level_1.gd" type="Script" id=4]
+[ext_resource path="res://Art/Building/progress bar/progress_bar_blue.png" type="Texture" id=5]
+[ext_resource path="res://Art/Levels/backgrounds/CosmicSky/light/l_5.png" type="Texture" id=6]
+[ext_resource path="res://Scenes/Levels/Collapse/Crack.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Art/Levels/Side/Collapse/b_1.png" type="Texture" id=8]
+[ext_resource path="res://Art/Levels/backgrounds/CosmicSky/sky_base_stars.png" type="Texture" id=9]
+[ext_resource path="res://Art/Levels/Side/Collapse/b_2.png" type="Texture" id=10]
+[ext_resource path="res://Art/Levels/Side/Collapse/b_4.png" type="Texture" id=11]
+[ext_resource path="res://Art/Levels/Side/Collapse/b_3.png" type="Texture" id=12]
+[ext_resource path="res://Art/Levels/Side/Collapse/b_5.png" type="Texture" id=13]
+[ext_resource path="res://Scenes/Levels/Collapse/Crack_1.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Scenes/Levels/Collapse/Crack_2.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Scenes/Levels/Collapse/Crack_3.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Scenes/Menus/PauseMenu.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Art/Levels/backgrounds/CosmicSky/light/l_3.png" type="Texture" id=18]
+[ext_resource path="res://Art/Levels/backgrounds/CosmicSky/dark/d_5.png" type="Texture" id=19]
+[ext_resource path="res://Art/Levels/backgrounds/CosmicSky/dark/d_4.png" type="Texture" id=20]
+[ext_resource path="res://Art/Levels/backgrounds/CosmicSky/dark/d_2.png" type="Texture" id=21]
+[ext_resource path="res://Art/Levels/backgrounds/CosmicSky/light/l_6.png" type="Texture" id=22]
+[ext_resource path="res://Art/Levels/backgrounds/CosmicSky/dark/d_1.png" type="Texture" id=23]
+[ext_resource path="res://Art/Levels/backgrounds/CosmicSky/dark/d_3.png" type="Texture" id=24]
+[ext_resource path="res://Art/Levels/backgrounds/CosmicSky/light/l_4.png" type="Texture" id=25]
+[ext_resource path="res://Art/Levels/backgrounds/CosmicSky/light/l_2.png" type="Texture" id=26]
+[ext_resource path="res://Art/Levels/backgrounds/CosmicSky/light/l_1.png" type="Texture" id=27]
+[ext_resource path="res://Art/Levels/backgrounds/CosmicSky/sky_base.png" type="Texture" id=28]
+[ext_resource path="res://Art/Levels/backgrounds/Moon/back.png" type="Texture" id=29]
+[ext_resource path="res://Scenes/Levels/Moon/Moon.tscn" type="PackedScene" id=30]
+[ext_resource path="res://Scenes/Levels/Level1/Ending1.tscn" type="PackedScene" id=31]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( -2.67256, 100.441, 2.67256, -100.441, 17.0922, 605.651, 0, 0, 0, 0, 19.2111, -161.401 )
+}
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 461.597, 10 )
+
+[node name="Level1" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="Background" type="Node2D" parent="."]
+
+[node name="Sky" type="Node2D" parent="Background"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="sky_base" type="Sprite" parent="Background/Sky"]
+position = Vector2( 1914.65, -18661.7 )
+scale = Vector2( 4.97214, 6.73316 )
+texture = ExtResource( 28 )
+
+[node name="sky_base_stars" type="Sprite" parent="Background/Sky"]
+position = Vector2( 22.6133, -186.531 )
+texture = ExtResource( 9 )
+
+[node name="sky_base_stars2" type="Sprite" parent="Background/Sky"]
+position = Vector2( 16.1609, -1255.49 )
+texture = ExtResource( 9 )
+
+[node name="sky_base_stars3" type="Sprite" parent="Background/Sky"]
+position = Vector2( 16.1609, -2316.39 )
+texture = ExtResource( 9 )
+
+[node name="sky_base_stars4" type="Sprite" parent="Background/Sky"]
+position = Vector2( 76.637, -3384.81 )
+texture = ExtResource( 9 )
+
+[node name="sky_base_stars5" type="Sprite" parent="Background/Sky"]
+position = Vector2( -800.268, -4443.14 )
+texture = ExtResource( 9 )
+
+[node name="sky_base_stars6" type="Sprite" parent="Background/Sky"]
+position = Vector2( -60.2793, -5492.58 )
+texture = ExtResource( 9 )
+
+[node name="sky_base_stars7" type="Sprite" parent="Background/Sky"]
+position = Vector2( 652.801, -6434.38 )
+texture = ExtResource( 9 )
+
+[node name="sky_base_stars8" type="Sprite" parent="Background/Sky"]
+position = Vector2( 531.711, -7403.1 )
+texture = ExtResource( 9 )
+
+[node name="sky_base_stars9" type="Sprite" parent="Background/Sky"]
+position = Vector2( 518.257, -8398.72 )
+texture = ExtResource( 9 )
+
+[node name="sky_base_stars10" type="Sprite" parent="Background/Sky"]
+position = Vector2( 857.668, -9315.13 )
+texture = ExtResource( 9 )
+
+[node name="sky_base_stars11" type="Sprite" parent="Background/Sky"]
+position = Vector2( 1418.67, -10377.2 )
+texture = ExtResource( 9 )
+
+[node name="sky_base_stars12" type="Sprite" parent="Background/Sky"]
+position = Vector2( 1943.78, -11442.1 )
+texture = ExtResource( 9 )
+
+[node name="sky_base_stars13" type="Sprite" parent="Background/Sky"]
+position = Vector2( 1796.71, -12437.7 )
+texture = ExtResource( 9 )
+
+[node name="sky_base_stars14" type="Sprite" parent="Background/Sky"]
+position = Vector2( 1536.49, -13489.9 )
+texture = ExtResource( 9 )
+
+[node name="sky_base_stars15" type="Sprite" parent="Background/Sky"]
+position = Vector2( 1966.41, -14530.7 )
+texture = ExtResource( 9 )
+
+[node name="sky_base_stars16" type="Sprite" parent="Background/Sky"]
+position = Vector2( 1963.11, -15475.5 )
+texture = ExtResource( 9 )
+
+[node name="sky_base_stars17" type="Sprite" parent="Background/Sky"]
+position = Vector2( 844.321, -16518 )
+texture = ExtResource( 9 )
+
+[node name="sky_base_stars18" type="Sprite" parent="Background/Sky"]
+position = Vector2( 2750.47, -16534.1 )
+texture = ExtResource( 9 )
+
+[node name="sky_base_stars19" type="Sprite" parent="Background/Sky"]
+position = Vector2( 1860.91, -17219 )
+scale = Vector2( 2.74723, 1.54612 )
+texture = ExtResource( 9 )
+
+[node name="back" type="Sprite" parent="Background/Sky"]
+modulate = Color( 0.509804, 0.509804, 0.509804, 1 )
+position = Vector2( 1893.97, -20101.6 )
+scale = Vector2( 2.3608, 1.05715 )
+texture = ExtResource( 29 )
+
+[node name="Clouds" type="Node2D" parent="Background"]
+modulate = Color( 1, 1, 1, 0.501961 )
+
+[node name="d_5" type="Sprite" parent="Background/Clouds"]
+position = Vector2( -283.044, -1587.44 )
+texture = ExtResource( 19 )
+
+[node name="d_1" type="Sprite" parent="Background/Clouds"]
+position = Vector2( -35.4092, -431.814 )
+texture = ExtResource( 23 )
+
+[node name="d_3" type="Sprite" parent="Background/Clouds"]
+position = Vector2( -257.645, -2381.15 )
+rotation = 1.03323
+texture = ExtResource( 24 )
+
+[node name="d_4" type="Sprite" parent="Background/Clouds"]
+position = Vector2( -276.694, -3974.9 )
+texture = ExtResource( 20 )
+
+[node name="d_6" type="Sprite" parent="Background/Clouds"]
+position = Vector2( -86.2061, -4978.13 )
+texture = ExtResource( 19 )
+
+[node name="d_2" type="Sprite" parent="Background/Clouds"]
+position = Vector2( 561.454, -6038.52 )
+texture = ExtResource( 23 )
+
+[node name="d_7" type="Sprite" parent="Background/Clouds"]
+position = Vector2( 580.503, -7670.37 )
+rotation = 1.61094
+texture = ExtResource( 21 )
+
+[node name="d_8" type="Sprite" parent="Background/Clouds"]
+position = Vector2( 942.929, -9120.58 )
+texture = ExtResource( 23 )
+
+[node name="d_9" type="Sprite" parent="Background/Clouds"]
+position = Vector2( 1332.49, -9797.81 )
+texture = ExtResource( 19 )
+
+[node name="d_10" type="Sprite" parent="Background/Clouds"]
+position = Vector2( 2093.63, -10553 )
+texture = ExtResource( 20 )
+
+[node name="d_11" type="Sprite" parent="Background/Clouds"]
+position = Vector2( 1835.92, -11631.7 )
+rotation = -0.644027
+texture = ExtResource( 24 )
+
+[node name="d_12" type="Sprite" parent="Background/Clouds"]
+position = Vector2( 1913.83, -13214 )
+rotation = -4.73508
+texture = ExtResource( 21 )
+
+[node name="d_13" type="Sprite" parent="Background/Clouds"]
+position = Vector2( 1835.92, -13903.2 )
+texture = ExtResource( 23 )
+
+[node name="d_14" type="Sprite" parent="Background/Clouds"]
+position = Vector2( 1740.03, -14886.1 )
+texture = ExtResource( 19 )
+
+[node name="DeathArea2" type="Area2D" parent="Background"]
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Background/DeathArea2"]
+polygon = PoolVector2Array( 2285.01, -15424.7, 2274.33, -15184.5, 2306.36, -14522.4, 2247.63, -14527.7, 2311.7, -14266.1, 2343.74, -13737.5, 2295.69, -13625.4, 2354.42, -13561.3, 2301.03, -13128.8, 2338.4, -13043.4, 2317.04, -12514.8, 2258.31, -12461.4, 2311.7, -12247.8, 2071.43, -11607.1, 2071.43, -11516.3, 2002.02, -11446.9, 1953.97, -11217.3, 1991.34, -11190.6, 1921.93, -11131.9, 1852.52, -10672.2, 1788.95, -10604.4, 1822.85, -10532.4, 1746.57, -10244.2, 1835.57, -10223, 1738.1, -10167.9, 1721.15, -10023.8, 1750.81, -9977.19, 1708.43, -9939.05, 1644.86, -9561.88, 1674.53, -9502.55, 1555.87, -9481.36, 1521.97, -9527.98, 1496.54, -9468.65, 1339.74, -9523.74, 1212.6, -9443.22, 1089.71, -9489.84, 941.382, -9362.7, 712.538, -9320.32, 682.443, -9065.58, 691.348, -9015.2, 644.732, -8443.09, 618.226, -8449.58, 656.281, -8254.55, 715.741, -8216.5, 665.319, -8136.05, 695.557, -7992.42, 715.715, -7533.81, 746.442, -7006.45, 675.398, -6873.61, 725.252, -6730.99, 682.958, -6629.19, 767.631, -6455.53, 781.232, -5931.19, 819.029, -5840.48, 847.004, -5409.41, 808.95, -5381.87, 847.004, -5253.41, 504.049, -5157.6, 438.533, -5102.16, 360.418, -5109.72, 209.228, -5056.81, 161.35, -4991.29, 63.0044, -4981.41, -28.9956, -4545.41, -96.9956, -4469.41, -52.9956, -4257.41, -112.996, -4205.41, -132.996, -3989.41, -124.996, -3753.41, -160.996, -3681.41, -124.996, -3361.41, -144.996, -3265.41, -96.9956, -3005.41, 363.004, -2697.41, 291.004, -2289.41, 231.004, -1613.41, 279.004, -1489.41, 203.004, -1461.41, 275.004, -1421.41, 203.004, -1265.41, 267.004, -1125.41, 231.004, -1013.41, 347.004, -877.413, 367.004, 358.587, -432.996, 346.587, -432.996, -397.413, -392.996, -497.413, -432.996, -585.413, -428.996, -817.413, -496.996, -921.413, -548.996, -1357.41, -552.996, -1925.41, -620.996, -2041.41, -556.996, -2177.41, -664.996, -2325.41, -580.996, -2361.41, -664.996, -2373.41, -624.996, -2493.41, -676.996, -2661.41, -744.996, -2737.41, -752.996, -3065.41, -784.996, -3221.41, -756.996, -3537.41, -768.996, -3709.41, -752.996, -3953.41, -840.996, -4165.41, -844.996, -4389.41, -920.996, -4581.41, -916.996, -4765.41, -948.996, -4849.41, -916.996, -4917.41, -948.996, -5357.41, -864.996, -5421.41, -664.996, -5385.41, -588.996, -5477.41, -461.051, -5492.74, -48.9956, -5665.41, 195.004, -5677.41, 302.461, -5686.77, 343.004, -5953.41, 395.004, -6397.41, 423.414, -6457.84, 405.775, -6543.51, 441.053, -6848.41, 431.004, -7021.41, 453.652, -7314.59, 415.854, -7553.97, 448.612, -7919.35, 415.004, -7997.41, 404.169, -8485.25, 456.494, -8578.01, 399.412, -8730.23, 437.467, -8858.66, 439.637, -9028.86, 506.441, -9286.78, 496.927, -9398.56, 551.631, -9788.62, 715.248, -9768.86, 1070.15, -9716, 1158.13, -9710.12, 1246.13, -9722.02, 1322.24, -9705.37, 1349.53, -9863.24, 1412.62, -9993.16, 1381.7, -10088.3, 1450.67, -10564, 1505.37, -10661.5, 1493, -10810.9, 1500.62, -11032.5, 1469.7, -11096.7, 1527.29, -11278, 1466.82, -11381.3, 1484.46, -11517.4, 1393.74, -11648.4, 1366.02, -11711.4, 1368.54, -12094.4, 1386.18, -12165, 1355.95, -12285.9, 1378.62, -12598.4, 1358.46, -12789.9, 1388.7, -13016.7, 1371.06, -13087.2, 1451.7, -13233.4, 1411.38, -13346.8, 1446.66, -13485.4, 1368.54, -13624, 1372.56, -13735.9, 1376.56, -13847.9, 1384.56, -13991.9, 1348.56, -14067.9, 1324.56, -14407.9, 1304.56, -14647.9, 1268.85, -14746.9, 1316.42, -15037, 1302.15, -15279.6, 1311.67, -15555.5, 356.074, -15559.5, -1827.04, -3557.43, -1199.84, 652.522, 1159.26, 673.904, 3257.85, -15397.9 )
+
+[node name="Moon" parent="Background" instance=ExtResource( 30 )]
+position = Vector2( 1800.48, -20663.7 )
+
+[node name="FollowBackground" type="Node2D" parent="."]
+visible = false
+z_index = -1000
+
+[node name="Paths" type="Node2D" parent="."]
+
+[node name="StartingPath" type="Path2D" parent="Paths"]
+position = Vector2( -14.9832, -86.9019 )
+curve = SubResource( 1 )
+
+[node name="Shuttle" parent="." instance=ExtResource( 3 )]
+
+[node name="Foreground" type="Node2D" parent="."]
+
+[node name="Clouds" type="Node2D" parent="Foreground"]
+modulate = Color( 1, 1, 1, 0.501961 )
+
+[node name="l_1" type="Sprite" parent="Foreground/Clouds"]
+position = Vector2( -337.715, -310.858 )
+texture = ExtResource( 27 )
+
+[node name="l_2" type="Sprite" parent="Foreground/Clouds"]
+position = Vector2( 61.8585, -681.891 )
+texture = ExtResource( 26 )
+
+[node name="l_3" type="Sprite" parent="Foreground/Clouds"]
+position = Vector2( 52.3446, -1305.04 )
+texture = ExtResource( 18 )
+
+[node name="l_4" type="Sprite" parent="Foreground/Clouds"]
+position = Vector2( -185.497, -2108.94 )
+texture = ExtResource( 25 )
+
+[node name="l_5" type="Sprite" parent="Foreground/Clouds"]
+position = Vector2( 0.0196533, -2974.68 )
+texture = ExtResource( 6 )
+
+[node name="l_6" type="Sprite" parent="Foreground/Clouds"]
+position = Vector2( -718.261, -3555.02 )
+texture = ExtResource( 27 )
+
+[node name="l_7" type="Sprite" parent="Foreground/Clouds"]
+position = Vector2( -684.964, -4958.28 )
+rotation = 0.429351
+scale = Vector2( -1, 1 )
+texture = ExtResource( 22 )
+
+[node name="l_8" type="Sprite" parent="Foreground/Clouds"]
+position = Vector2( -285.39, -5334.07 )
+rotation = 1.61094
+texture = ExtResource( 22 )
+
+[node name="l_9" type="Sprite" parent="Foreground/Clouds"]
+position = Vector2( 380.566, -5586.18 )
+texture = ExtResource( 26 )
+
+[node name="l_10" type="Sprite" parent="Foreground/Clouds"]
+position = Vector2( 504.243, -6699.28 )
+texture = ExtResource( 27 )
+
+[node name="l_11" type="Sprite" parent="Foreground/Clouds"]
+position = Vector2( 670.732, -7755.3 )
+texture = ExtResource( 18 )
+
+[node name="l_12" type="Sprite" parent="Foreground/Clouds"]
+position = Vector2( 332.998, -8687.64 )
+texture = ExtResource( 6 )
+
+[node name="l_13" type="Sprite" parent="Foreground/Clouds"]
+position = Vector2( 1103.6, -9439.22 )
+texture = ExtResource( 27 )
+
+[node name="l_14" type="Sprite" parent="Foreground/Clouds"]
+position = Vector2( 1251.07, -10105.2 )
+texture = ExtResource( 26 )
+
+[node name="l_15" type="Sprite" parent="Foreground/Clouds"]
+position = Vector2( 1674.42, -9548.63 )
+texture = ExtResource( 6 )
+
+[node name="l_16" type="Sprite" parent="Foreground/Clouds"]
+position = Vector2( 1674.42, -10718.8 )
+texture = ExtResource( 22 )
+
+[node name="l_17" type="Sprite" parent="Foreground/Clouds"]
+position = Vector2( 1978.86, -11408.6 )
+scale = Vector2( -1, 1 )
+texture = ExtResource( 26 )
+
+[node name="l_18" type="Sprite" parent="Foreground/Clouds"]
+position = Vector2( 1955.08, -12188.7 )
+texture = ExtResource( 18 )
+
+[node name="l_19" type="Sprite" parent="Foreground/Clouds"]
+position = Vector2( 1626.85, -13011.6 )
+scale = Vector2( -1, 1 )
+texture = ExtResource( 27 )
+
+[node name="l_20" type="Sprite" parent="Foreground/Clouds"]
+position = Vector2( 1965.69, -13594.1 )
+texture = ExtResource( 25 )
+
+[node name="l_21" type="Sprite" parent="Foreground/Clouds"]
+position = Vector2( 1588.12, -14577 )
+texture = ExtResource( 26 )
+
+[node name="l_22" type="Sprite" parent="Foreground/Clouds"]
+position = Vector2( 2013.64, -15134.3 )
+texture = ExtResource( 22 )
+
+[node name="BoderRight" type="Node2D" parent="Foreground"]
+position = Vector2( 1826.06, 0 )
+scale = Vector2( -1, 1 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="b_2" type="Sprite" parent="Foreground/BoderRight"]
+position = Vector2( 942.789, -165.075 )
+texture = ExtResource( 10 )
+
+[node name="b_3" type="Sprite" parent="Foreground/BoderRight"]
+position = Vector2( 1004.66, -1234.4 )
+rotation = 0.10821
+texture = ExtResource( 12 )
+
+[node name="b_5" type="Sprite" parent="Foreground/BoderRight"]
+position = Vector2( 1014.27, -2119.99 )
+rotation = -0.10821
+texture = ExtResource( 13 )
+
+[node name="b_1" type="Sprite" parent="Foreground/BoderRight"]
+position = Vector2( 1218.92, -3145.45 )
+rotation = 0.966912
+texture = ExtResource( 8 )
+
+[node name="b_4" type="Sprite" parent="Foreground/BoderRight"]
+position = Vector2( 1433.22, -3552.33 )
+texture = ExtResource( 11 )
+
+[node name="b_6" type="Sprite" parent="Foreground/BoderRight"]
+position = Vector2( 1297.24, -4412.79 )
+rotation = -0.322886
+texture = ExtResource( 12 )
+
+[node name="b_7" type="Sprite" parent="Foreground/BoderRight"]
+position = Vector2( 475.131, -860.952 )
+texture = ExtResource( 8 )
+
+[node name="b_8" type="Sprite" parent="Foreground/BoderRight"]
+position = Vector2( 485.211, -2846.59 )
+texture = ExtResource( 8 )
+
+[node name="b_9" type="Sprite" parent="Foreground/BoderRight"]
+position = Vector2( 535.608, -3858.35 )
+texture = ExtResource( 8 )
+
+[node name="b_10" type="Sprite" parent="Foreground/BoderRight"]
+position = Vector2( 960.836, -4732.23 )
+rotation = -1.28805
+texture = ExtResource( 10 )
+
+[node name="b_11" type="Sprite" parent="Foreground/BoderRight"]
+position = Vector2( 499.962, -5766.01 )
+rotation = 0.10821
+texture = ExtResource( 8 )
+
+[node name="b_12" type="Sprite" parent="Foreground/BoderRight"]
+position = Vector2( 59.2533, -4840.79 )
+texture = ExtResource( 8 )
+
+[node name="b_13" type="Sprite" parent="Foreground/BoderRight"]
+position = Vector2( 552.46, -6770.79 )
+texture = ExtResource( 12 )
+
+[node name="b_14" type="Sprite" parent="Foreground/BoderRight"]
+position = Vector2( 625.747, -7811.47 )
+rotation = 0.10472
+texture = ExtResource( 10 )
+
+[node name="b_15" type="Sprite" parent="Foreground/BoderRight"]
+position = Vector2( 635.231, -8752.55 )
+rotation = -0.0872665
+texture = ExtResource( 8 )
+
+[node name="b_16" type="Sprite" parent="Foreground/BoderRight"]
+position = Vector2( 484.689, -8899.37 )
+rotation = -1.39626
+texture = ExtResource( 12 )
+
+[node name="b_17" type="Sprite" parent="Foreground/BoderRight"]
+position = Vector2( -370.739, -9695.71 )
+rotation = -0.15708
+texture = ExtResource( 10 )
+
+[node name="b_18" type="Sprite" parent="Foreground/BoderRight"]
+position = Vector2( -552.498, -10702.7 )
+rotation = -0.191986
+texture = ExtResource( 13 )
+
+[node name="b_19" type="Sprite" parent="Foreground/BoderRight"]
+position = Vector2( -804.019, -11663.1 )
+rotation = -0.314159
+texture = ExtResource( 10 )
+
+[node name="b_20" type="Sprite" parent="Foreground/BoderRight"]
+position = Vector2( -1016.72, -12800.8 )
+rotation = -0.0523599
+texture = ExtResource( 8 )
+
+[node name="b_21" type="Sprite" parent="Foreground/BoderRight"]
+position = Vector2( -1017.43, -13871.4 )
+rotation = 0.0523599
+texture = ExtResource( 13 )
+
+[node name="b_22" type="Sprite" parent="Foreground/BoderRight"]
+position = Vector2( -989.092, -14880.5 )
+texture = ExtResource( 8 )
+
+[node name="b_23" type="Sprite" parent="Foreground/BoderRight"]
+position = Vector2( -1157.03, -12316.8 )
+texture = ExtResource( 8 )
+
+[node name="b_24" type="Sprite" parent="Foreground/BoderRight"]
+position = Vector2( -1530.38, -13470.8 )
+texture = ExtResource( 8 )
+
+[node name="b_25" type="Sprite" parent="Foreground/BoderRight"]
+position = Vector2( -365.067, -8775.61 )
+texture = ExtResource( 8 )
+
+[node name="b_26" type="Sprite" parent="Foreground/BoderRight"]
+position = Vector2( -331.126, -7757.38 )
+texture = ExtResource( 8 )
+
+[node name="b_27" type="Sprite" parent="Foreground/BoderRight"]
+position = Vector2( -421.636, -6750.46 )
+texture = ExtResource( 8 )
+
+[node name="b_28" type="Sprite" parent="Foreground/BoderRight"]
+position = Vector2( -466.891, -5788.79 )
+texture = ExtResource( 8 )
+
+[node name="b_29" type="Sprite" parent="Foreground/BoderRight"]
+position = Vector2( -1216.75, -15454.8 )
+rotation = -0.752237
+texture = ExtResource( 10 )
+
+[node name="b_30" type="Sprite" parent="Foreground/BoderRight"]
+position = Vector2( -1873.76, -15859.8 )
+rotation = -1.26187
+scale = Vector2( 1, -1 )
+texture = ExtResource( 13 )
+
+[node name="Node2D" type="Node2D" parent="Foreground/BoderRight"]
+position = Vector2( 499.652, -288.18 )
+
+[node name="BorderLeft" type="Node2D" parent="Foreground"]
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="Node2D" type="Node2D" parent="Foreground/BorderLeft"]
+
+[node name="b_1" type="Sprite" parent="Foreground/BorderLeft"]
+position = Vector2( -952.684, -181.093 )
+texture = ExtResource( 8 )
+
+[node name="b_4" type="Sprite" parent="Foreground/BorderLeft"]
+position = Vector2( -1051.79, -1092.1 )
+rotation = -0.214676
+texture = ExtResource( 11 )
+
+[node name="b_3" type="Sprite" parent="Foreground/BorderLeft"]
+position = Vector2( -1169.57, -2059.81 )
+texture = ExtResource( 12 )
+
+[node name="b_2" type="Sprite" parent="Foreground/BorderLeft"]
+position = Vector2( -1290.15, -2848.33 )
+rotation = -0.322886
+texture = ExtResource( 10 )
+
+[node name="b_5" type="Sprite" parent="Foreground/BorderLeft"]
+position = Vector2( -1277.47, -3317.75 )
+texture = ExtResource( 13 )
+
+[node name="b_6" type="Sprite" parent="Foreground/BorderLeft"]
+position = Vector2( -1373.41, -4228.81 )
+rotation = -0.214676
+texture = ExtResource( 11 )
+
+[node name="b_7" type="Sprite" parent="Foreground/BorderLeft"]
+position = Vector2( -1440.68, -5125.44 )
+texture = ExtResource( 10 )
+
+[node name="b_8" type="Sprite" parent="Foreground/BorderLeft"]
+position = Vector2( -743.783, -6007.76 )
+rotation = 1.22173
+texture = ExtResource( 12 )
+
+[node name="b_9" type="Sprite" parent="Foreground/BorderLeft"]
+position = Vector2( -228.847, -6191.23 )
+rotation = 1.5708
+texture = ExtResource( 11 )
+
+[node name="b_10" type="Sprite" parent="Foreground/BorderLeft"]
+position = Vector2( -144.732, -6260.59 )
+rotation = 0.10821
+texture = ExtResource( 13 )
+
+[node name="b_11" type="Sprite" parent="Foreground/BorderLeft"]
+position = Vector2( -88.488, -7253.84 )
+texture = ExtResource( 11 )
+
+[node name="b_12" type="Sprite" parent="Foreground/BorderLeft"]
+position = Vector2( -95.324, -8265.51 )
+texture = ExtResource( 8 )
+
+[node name="b_13" type="Sprite" parent="Foreground/BorderLeft"]
+position = Vector2( -1512.25, -6046.72 )
+texture = ExtResource( 10 )
+
+[node name="b_14" type="Sprite" parent="Foreground/BorderLeft"]
+position = Vector2( -34.0338, -9328.3 )
+rotation = 0.122173
+texture = ExtResource( 11 )
+
+[node name="b_15" type="Sprite" parent="Foreground/BorderLeft"]
+position = Vector2( 854.969, -10257.3 )
+rotation = 1.65806
+texture = ExtResource( 13 )
+
+[node name="b_16" type="Sprite" parent="Foreground/BorderLeft"]
+position = Vector2( 923.575, -10439.9 )
+rotation = 0.15708
+texture = ExtResource( 8 )
+
+[node name="b_17" type="Sprite" parent="Foreground/BorderLeft"]
+position = Vector2( 922.679, -11325.1 )
+rotation = -0.15708
+texture = ExtResource( 12 )
+
+[node name="b_18" type="Sprite" parent="Foreground/BorderLeft"]
+position = Vector2( 864.007, -12370.3 )
+texture = ExtResource( 13 )
+
+[node name="b_19" type="Sprite" parent="Foreground/BorderLeft"]
+position = Vector2( 864.007, -13385.1 )
+texture = ExtResource( 12 )
+
+[node name="b_20" type="Sprite" parent="Foreground/BorderLeft"]
+position = Vector2( 821.828, -14333.6 )
+rotation = -0.122173
+texture = ExtResource( 11 )
+
+[node name="b_21" type="Sprite" parent="Foreground/BorderLeft"]
+position = Vector2( 818.942, -15047.4 )
+texture = ExtResource( 10 )
+
+[node name="b_22" type="Sprite" parent="Foreground/BorderLeft"]
+position = Vector2( 380.935, -11988.7 )
+texture = ExtResource( 8 )
+
+[node name="b_23" type="Sprite" parent="Foreground/BorderLeft"]
+position = Vector2( -139.496, -10291.6 )
+texture = ExtResource( 8 )
+
+[node name="b_24" type="Sprite" parent="Foreground/BorderLeft"]
+position = Vector2( 98.0923, -11162.8 )
+texture = ExtResource( 8 )
+
+[node name="b_25" type="Sprite" parent="Foreground/BorderLeft"]
+position = Vector2( -1021.96, -7078.56 )
+texture = ExtResource( 8 )
+
+[node name="b_26" type="Sprite" parent="Foreground/BorderLeft"]
+position = Vector2( -592.044, -8809.55 )
+texture = ExtResource( 8 )
+
+[node name="b_27" type="Sprite" parent="Foreground/BorderLeft"]
+position = Vector2( -863.573, -7938.4 )
+texture = ExtResource( 8 )
+
+[node name="b_28" type="Sprite" parent="Foreground/BorderLeft"]
+position = Vector2( -818.318, -9612.83 )
+texture = ExtResource( 8 )
+
+[node name="b_29" type="Sprite" parent="Foreground/BorderLeft"]
+position = Vector2( 600.606, -15699.9 )
+rotation = -0.644027
+texture = ExtResource( 8 )
+
+[node name="b_30" type="Sprite" parent="Foreground/BorderLeft"]
+position = Vector2( 7.53839, -16156.9 )
+rotation = -1.18159
+texture = ExtResource( 12 )
+
+[node name="Hazards" type="Node2D" parent="Foreground"]
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="Crack" parent="Foreground/Hazards" instance=ExtResource( 7 )]
+position = Vector2( 2.24487, -1133.69 )
+
+[node name="Crack6" parent="Foreground/Hazards" instance=ExtResource( 7 )]
+position = Vector2( 425.264, -5601.37 )
+rotation = 0.644027
+
+[node name="Crack14" parent="Foreground/Hazards" instance=ExtResource( 7 )]
+position = Vector2( 580.062, -9146.02 )
+
+[node name="Crack10" parent="Foreground/Hazards" instance=ExtResource( 7 )]
+position = Vector2( -330.733, -4373.09 )
+
+[node name="Crack2" parent="Foreground/Hazards" instance=ExtResource( 14 )]
+position = Vector2( -369.168, -1661.24 )
+
+[node name="Crack7" parent="Foreground/Hazards" instance=ExtResource( 14 )]
+position = Vector2( -131.326, -5414.38 )
+rotation = 1.02102
+
+[node name="Crack11" parent="Foreground/Hazards" instance=ExtResource( 14 )]
+position = Vector2( 728.303, -6181.73 )
+rotation = 0.511381
+scale = Vector2( -1, 1 )
+speed_scale = 0.2
+
+[node name="Crack12" parent="Foreground/Hazards" instance=ExtResource( 14 )]
+position = Vector2( 425.072, -6198.7 )
+rotation = -0.305433
+speed_scale = 0.3
+
+[node name="Crack3" parent="Foreground/Hazards" instance=ExtResource( 15 )]
+position = Vector2( 96.2168, -2234.37 )
+rotation = 0.509636
+scale = Vector2( -0.8, 1 )
+
+[node name="Crack8" parent="Foreground/Hazards" instance=ExtResource( 15 )]
+position = Vector2( -179.679, -4921.98 )
+rotation = 0.509636
+scale = Vector2( -0.8, 1 )
+
+[node name="Crack13" parent="Foreground/Hazards" instance=ExtResource( 15 )]
+position = Vector2( 686.063, -7395.53 )
+rotation = 0.816814
+scale = Vector2( -0.8, 1 )
+speed_scale = 0.3
+
+[node name="Crack4" parent="Foreground/Hazards" instance=ExtResource( 16 )]
+position = Vector2( -549.241, -2854.15 )
+
+[node name="Crack5" parent="Foreground/Hazards" instance=ExtResource( 16 )]
+position = Vector2( -324.634, -3163.51 )
+rotation = 0.307178
+scale = Vector2( -1, 1 )
+
+[node name="Crack9" parent="Foreground/Hazards" instance=ExtResource( 16 )]
+position = Vector2( -605.287, -3762.87 )
+rotation = -0.918043
+
+[node name="Ending Clouds" type="Node2D" parent="Foreground"]
+position = Vector2( -105.714, 30.2031 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Dark" type="Node2D" parent="Foreground/Ending Clouds"]
+
+[node name="d_5" type="Sprite" parent="Foreground/Ending Clouds/Dark"]
+position = Vector2( 1179.56, -15146 )
+texture = ExtResource( 19 )
+
+[node name="d_4" type="Sprite" parent="Foreground/Ending Clouds/Dark"]
+position = Vector2( 2706.11, -15662.3 )
+texture = ExtResource( 20 )
+
+[node name="d_2" type="Sprite" parent="Foreground/Ending Clouds/Dark"]
+position = Vector2( 1790.18, -15630.9 )
+rotation = -1.61094
+texture = ExtResource( 21 )
+
+[node name="d_3" type="Sprite" parent="Foreground/Ending Clouds/Dark"]
+position = Vector2( 1026.91, -16358.3 )
+rotation = 4.39125
+texture = ExtResource( 24 )
+
+[node name="d_6" type="Sprite" parent="Foreground/Ending Clouds/Dark"]
+position = Vector2( 1983.24, -16618.7 )
+texture = ExtResource( 19 )
+
+[node name="d_1" type="Sprite" parent="Foreground/Ending Clouds/Dark"]
+position = Vector2( 943.097, -15614.3 )
+texture = ExtResource( 23 )
+
+[node name="d_7" type="Sprite" parent="Foreground/Ending Clouds/Dark"]
+position = Vector2( 3150.13, -16176.6 )
+texture = ExtResource( 23 )
+
+[node name="d_8" type="Sprite" parent="Foreground/Ending Clouds/Dark"]
+position = Vector2( 1575.43, -17535.4 )
+rotation = 1.61094
+texture = ExtResource( 21 )
+
+[node name="d_9" type="Sprite" parent="Foreground/Ending Clouds/Dark"]
+position = Vector2( 470.601, -17192.5 )
+texture = ExtResource( 23 )
+
+[node name="d_10" type="Sprite" parent="Foreground/Ending Clouds/Dark"]
+position = Vector2( -316.75, -16583 )
+texture = ExtResource( 19 )
+
+[node name="d_11" type="Sprite" parent="Foreground/Ending Clouds/Dark"]
+position = Vector2( 3988.28, -16735.4 )
+texture = ExtResource( 19 )
+
+[node name="d_12" type="Sprite" parent="Foreground/Ending Clouds/Dark"]
+position = Vector2( 3239.03, -17205.2 )
+texture = ExtResource( 20 )
+
+[node name="d_13" type="Sprite" parent="Foreground/Ending Clouds/Dark"]
+position = Vector2( 3391.42, -17637 )
+rotation = 1.07338
+texture = ExtResource( 24 )
+
+[node name="d_14" type="Sprite" parent="Foreground/Ending Clouds/Dark"]
+position = Vector2( 2502.48, -17167.1 )
+texture = ExtResource( 23 )
+
+[node name="d_15" type="Sprite" parent="Foreground/Ending Clouds/Dark"]
+position = Vector2( 2058, -17814.8 )
+texture = ExtResource( 20 )
+
+[node name="d_16" type="Sprite" parent="Foreground/Ending Clouds/Dark"]
+position = Vector2( -463.913, -17849.3 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 19 )
+
+[node name="d_17" type="Sprite" parent="Foreground/Ending Clouds/Dark"]
+position = Vector2( 4685.87, -18453.3 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 23 )
+
+[node name="d_18" type="Sprite" parent="Foreground/Ending Clouds/Dark"]
+position = Vector2( 4625.46, -17698.2 )
+texture = ExtResource( 19 )
+
+[node name="Light" type="Node2D" parent="Foreground/Ending Clouds"]
+modulate = Color( 1, 1, 1, 0.862745 )
+
+[node name="l_3" type="Sprite" parent="Foreground/Ending Clouds/Light"]
+position = Vector2( 2019.16, -15509.7 )
+texture = ExtResource( 18 )
+
+[node name="l_4" type="Sprite" parent="Foreground/Ending Clouds/Light"]
+position = Vector2( 1359.16, -15047.2 )
+texture = ExtResource( 25 )
+
+[node name="l_5" type="Sprite" parent="Foreground/Ending Clouds/Light"]
+position = Vector2( 1007.12, -15791.6 )
+rotation = 3.06131
+texture = ExtResource( 6 )
+
+[node name="l_1" type="Sprite" parent="Foreground/Ending Clouds/Light"]
+position = Vector2( 2379.72, -15813 )
+rotation = 3.06131
+scale = Vector2( 2, 2 )
+texture = ExtResource( 27 )
+
+[node name="l_6" type="Sprite" parent="Foreground/Ending Clouds/Light"]
+position = Vector2( 2445.7, -16223.6 )
+rotation = 3.11541
+texture = ExtResource( 25 )
+
+[node name="l_2" type="Sprite" parent="Foreground/Ending Clouds/Light"]
+position = Vector2( 1121.46, -16520 )
+texture = ExtResource( 26 )
+
+[node name="l_7" type="Sprite" parent="Foreground/Ending Clouds/Light"]
+position = Vector2( 521.832, -16418.1 )
+texture = ExtResource( 18 )
+
+[node name="l_8" type="Sprite" parent="Foreground/Ending Clouds/Light"]
+position = Vector2( 1574.01, -16338.9 )
+texture = ExtResource( 25 )
+
+[node name="l_9" type="Sprite" parent="Foreground/Ending Clouds/Light"]
+position = Vector2( 2117.06, -16553.9 )
+texture = ExtResource( 26 )
+
+[node name="l_10" type="Sprite" parent="Foreground/Ending Clouds/Light"]
+position = Vector2( 510.518, -16825.4 )
+texture = ExtResource( 6 )
+
+[node name="l_11" type="Sprite" parent="Foreground/Ending Clouds/Light"]
+position = Vector2( 2965.59, -16520 )
+texture = ExtResource( 6 )
+
+[node name="l_12" type="Sprite" parent="Foreground/Ending Clouds/Light"]
+position = Vector2( 1276.2, -17655.2 )
+texture = ExtResource( 18 )
+
+[node name="l_13" type="Sprite" parent="Foreground/Ending Clouds/Light"]
+position = Vector2( 3519.96, -16644.4 )
+texture = ExtResource( 26 )
+
+[node name="l_14" type="Sprite" parent="Foreground/Ending Clouds/Light"]
+position = Vector2( 1777.65, -17221.4 )
+scale = Vector2( -2, 2 )
+texture = ExtResource( 18 )
+
+[node name="l_15" type="Sprite" parent="Foreground/Ending Clouds/Light"]
+position = Vector2( 3524.44, -17457.5 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 27 )
+
+[node name="l_16" type="Sprite" parent="Foreground/Ending Clouds/Light"]
+position = Vector2( 4202.6, -18392.9 )
+scale = Vector2( -2, 2 )
+texture = ExtResource( 18 )
+
+[node name="l_17" type="Sprite" parent="Foreground/Ending Clouds/Light"]
+position = Vector2( 427.104, -17924.8 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 22 )
+
+[node name="l_18" type="Sprite" parent="Foreground/Ending Clouds/Light"]
+position = Vector2( 1771.18, -18272.1 )
+texture = ExtResource( 6 )
+
+[node name="l_19" type="Sprite" parent="Foreground/Ending Clouds/Light"]
+position = Vector2( -116.567, -18725.2 )
+texture = ExtResource( 26 )
+
+[node name="StartingClouds" type="Node2D" parent="Foreground"]
+
+[node name="d_5" type="Sprite" parent="Foreground/StartingClouds"]
+modulate = Color( 1, 1, 1, 0.498039 )
+position = Vector2( 77.1477, 362.644 )
+texture = ExtResource( 19 )
+
+[node name="l_3" type="Sprite" parent="Foreground/StartingClouds"]
+modulate = Color( 1, 1, 1, 0.698039 )
+position = Vector2( -154.852, 248.644 )
+texture = ExtResource( 18 )
+
+[node name="l_2" type="Sprite" parent="Foreground/StartingClouds"]
+modulate = Color( 1, 1, 1, 0.764706 )
+position = Vector2( 307.148, 186.644 )
+texture = ExtResource( 26 )
+
+[node name="FollowCamera" type="Node2D" parent="."]
+
+[node name="DeathArea" type="Area2D" parent="FollowCamera"]
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FollowCamera/DeathArea"]
+position = Vector2( 0, 455 )
+shape = SubResource( 2 )
+
+[node name="Shield" type="TextureProgress" parent="FollowCamera"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -109.0
+margin_top = 412.861
+margin_right = 110.0
+margin_bottom = 430.861
+texture_under = ExtResource( 1 )
+texture_progress = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Fuel" type="TextureProgress" parent="FollowCamera"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -109.0
+margin_top = 387.499
+margin_right = 110.0
+margin_bottom = 405.499
+step = 0.01
+texture_under = ExtResource( 1 )
+texture_progress = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PauseMenu" parent="FollowCamera" instance=ExtResource( 17 )]
+visible = false
+
+[node name="FollowForeground" type="Node2D" parent="."]
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="Ending1" parent="." instance=ExtResource( 31 )]
+position = Vector2( 1796.13, -20633.7 )

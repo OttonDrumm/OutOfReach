@@ -1,0 +1,32 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Script/Levels/Borders/s_barrier.gd" type="Script" id=1]
+[ext_resource path="res://Art/Levels/backgrounds/Border/border_3.png" type="Texture" id=3]
+[ext_resource path="res://Art/Levels/backgrounds/Border/border_4.png" type="Texture" id=4]
+[ext_resource path="res://Art/Levels/backgrounds/Border/border_over.png" type="Texture" id=5]
+[ext_resource path="res://Art/Levels/backgrounds/Border/border_1.png" type="Texture" id=6]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 388.824, 1081.87 )
+
+[node name="Barrier" type="Area2D"]
+modulate = Color( 0.152941, 0.152941, 0.152941, 1 )
+script = ExtResource( 1 )
+
+[node name="Sprite1" type="Sprite" parent="."]
+texture = ExtResource( 6 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+texture = ExtResource( 3 )
+
+[node name="Sprite3" type="Sprite" parent="."]
+texture = ExtResource( 4 )
+
+[node name="Sprite4" type="Sprite" parent="."]
+texture = ExtResource( 5 )
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource( 1 )
+
+[node name="Tween" type="Tween" parent="."]
